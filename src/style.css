@@ -1,10 +1,99 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+body {
+  font-family: 'Pangolin', cursive;
+  font-size: 30px;
+  margin: 2%;
 }
 
-body {
-  font-family: "Roboto", "Arial", "sans-serif";
-  font-size: 24px;
+.np-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+h1 {
+  text-align: center;
+  font-size: 55px;
+}
+
+.column {
+  flex-basis: calc(33.3333% - 20px);
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+img {
+  height: 100px;
+}
+
+.desc {
+  text-align: center;
+  color: #999;
+}
+
+.container {
+  background-color: #f7f7f7;
+  border: 3px solid #f19a0e;
+  padding: 20px;
+  flex-wrap: wrap;
+  flex-grow: 1;
+}
+
+.np-image img {
+  width: 100%;
+  height: auto;
+}
+
+.np-description {
+  margin-top: 10px;
+}
+
+.np-actions {
+  margin-top: 20px;
+}
+
+.np-likes {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.np-likes i {
+  color: #f19a0e;
+  margin-right: 5px;
+}
+
+.comments,
+.reservation {
+  background-color: #fff;
+  color: #333;
+  border: 2px solid black;
+  padding: 10px 20px;
+  cursor: pointer;
+  margin-right: 10px;
+  width: 90%;
+  margin-top: 1%;
+  font-size: 30px;
+  font-family: 'Pangolin', cursive;
+  box-shadow: -11px 12px 15px 2px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: -11px 12px 15px 2px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: -11px 12px 15px 2px rgba(0, 0, 0, 0.75);
+}
+
+.comments:hover,
+.reservation:hover {
+  background-color: #555;
+}
+
+footer {
+  border: 3px solid #f19a0e;
+  text-align: center;
+  width: 99%;
+  bottom: 0;
+  font-size: 25px;
+  padding-block: 15px;
+  letter-spacing: 00.2em;
+}
+
+span {
+  color: #f19a0e;
 }
