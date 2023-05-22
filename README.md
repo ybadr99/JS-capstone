@@ -1,10 +1,6 @@
-<div align="center">
-  <h3><b>Meals</b></h3>
-</div>
+# MEALS
 
-<!-- TABLE OF CONTENTS -->
-
-[📗 Table of Contents](#-table-of-contents)
+# 📗 Table of Contents
 
 - [📖 Leaderbord](#-leaderbord)
   - [🛠 Built With ](#-built-with-)
@@ -83,12 +79,16 @@ To run tests, run the following commands:
 
 ## 👥 Authors <a name="authors"></a>
 
-> Yousef Badr
-> 👤 **Author1**
+> 👤 **Yousef Badr**
 
 - GitHub: [@ybadr99](https://github.com/ybadr99)
 - LinkedIn: [LinkedIn](https://www.linkedin.com/in/yousef-mohamed-badr/)
 
+👤 **berylcl**
+
+- GitHub: [@berylcl](https://github.com/Gakiiberyl)
+- Twitter: [omg_its_beryl](https://twitter.com/omg_its_beryl)
+- LinkedIn: [callme-claudette](https://www.linkedin.com/in/callme-claudette-83a796230/)
 <!-- CONTRIBUTING -->
 
 ## 🤝 Contributing <a name="contributing"></a>
