@@ -84,7 +84,7 @@ To run tests, run the following commands:
 - GitHub: [@ybadr99](https://github.com/ybadr99)
 - LinkedIn: [LinkedIn](https://www.linkedin.com/in/yousef-mohamed-badr/)
 
-👤 **berylcl**
+> 👤 **berylcl**
 
 - GitHub: [@berylcl](https://github.com/Gakiiberyl)
 - Twitter: [omg_its_beryl](https://twitter.com/omg_its_beryl)
