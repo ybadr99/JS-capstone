@@ -1,98 +1,95 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Meals App</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Pangolin&display=swap" rel="stylesheet">
-</head>
-<body>
-<header>
-  <!-- Your header content goes here -->
-</header>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Meals App</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pangolin&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <h1>Meals App</h1>
+        <a href="#" class="active">Meals(9)</a>
+        <a href="#">About</a>
+      </div>
+    </header>
 
-<main>
-  <section class="np-content">
-    <h1>Meals App</h1>
-    <p class = "desc">The JavaScript capstone project involves building a web application centered around a meals API. This API provides data related to different meals, including recipes, ingredients, nutritional information, and more.</p>
-    <div class="np-row">
-      <!-- First  item -->
-      <div class="column">
+    <main>
+      <section class="section-meals">
         <div class="container">
-          <div class="np-image">
-            <img src="./images/carribeanjerk.jpg" alt="Image one">
-          </div>
+          <div class="meal">
+            <div class="image">
+              <img src="./assets/images/meat-board.jpg" alt="Image one" />
+            </div>
 
-          <div class="np-title">
-            <h3>Meal one</h3>
-          </div>
-          <div class="np-description">
-            <p>Description of meal one will be generated dynamically</p>
-          </div>
-          <div class="np-actions">
-            <div class="np-likes">
+            <div class="title">
+              <h3>Meal one</h3>
+            </div>
+            <div class="description">
+              <p>Description of meal one will be generated dynamically</p>
+            </div>
+            <div class="likes">
               <i class="fas fa-heart"></i>
               <span>50 Likes</span>
             </div>
-            <button class="comments">Comments</button>
-            <button class="reservation">Reservations</button>
+            <div class="actions">
+              <button class="comments">Comments</button>
+              <button class="reservation">Reservations</button>
+            </div>
           </div>
-        </div>
-      </div>
-      <!-- Second item -->
-      <div class="column">
-        <div class="container">
-          <div class="np-image">
-            <img src="./images/brownstew.jpg" alt="Item 2">
-          </div>
-          <div class="np-title">
-            <h3>Meal 2</h3>
-          </div>
-          <div class="np-description">
-            <p>Description of meal one will be generated dynamically</p>
-          </div>
-          <div class="np-actions">
-            <div class="np-likes">
+          <div class="meal">
+            <div class="image">
+              <img src="./assets/images/meat-board.jpg" alt="Image one" />
+            </div>
+
+            <div class="title">
+              <h3>Meal one</h3>
+            </div>
+            <div class="description">
+              <p>Description of meal one will be generated dynamically</p>
+            </div>
+            <div class="likes">
               <i class="fas fa-heart"></i>
-              <span>30 Likes</span>
+              <span>50 Likes</span>
             </div>
-            <button class="comments">Comments</button>
-            <button class="reservation">Reservations</button>
+            <div class="actions">
+              <button class="comments">Comments</button>
+              <button class="reservation">Reservations</button>
+            </div>
+          </div>
+          <div class="meal">
+            <div class="image">
+              <img src="./assets/images/meat-board.jpg" alt="Image one" />
+            </div>
+
+            <div class="title">
+              <h3>Meal one</h3>
+            </div>
+            <div class="description">
+              <p>Description of meal one will be generated dynamically</p>
+            </div>
+            <div class="likes">
+              <i class="fas fa-heart"></i>
+              <span>50 Likes</span>
+            </div>
+            <div class="actions">
+              <button class="comments">Comments</button>
+              <button class="reservation">Reservations</button>
+            </div>
           </div>
         </div>
-      </div>
-
-      <!-- Third item -->
-      <div class="column">
-        <div class="container">
-          <div class="np-image">
-            <img src="./images/meat-board.jpg" alt="Bakery Item 3">
-          </div>
-          <div class="np-title">
-            <h3>Meal 3</h3>
-          </div>
-          <div class="np-description">
-            <p>Description of meal one will be generated dynamically</p>
-          </div>
-          <div class="np-actions">
-            <div class="np-likes">
-              <i class="fas fa-heart"></i><br>
-              <span>20 Likes</span>
-            </div>
-            <button class="comments">Comments</button>
-            <button class="reservation">Reservations</button>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-</main>
-<footer>
-Created by Gakii and Yousef under MIT license
-</footer>
-
-</body>
+      </section>
+    </main>
+    <!-- <footer>Created by Gakii and Yousef under MIT license</footer> -->
+  </body>
 </html>

@@ -1,63 +1,81 @@
-body {
-  font-family: 'Pangolin', cursive;
-  font-size: 30px;
-  margin: 2%;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.np-row {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
+body {
+  font-family: "Pangolin", cursive;
+  font-size: 24px;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 1400px;
+  padding: 0 32px;
 }
 
 h1 {
-  text-align: center;
   font-size: 55px;
 }
 
-.column {
-  flex-basis: calc(33.3333% - 20px);
-  margin-bottom: 20px;
-  flex-wrap: wrap;
+header {
+  margin: 100px 0 50px 0;
+  text-align: center;
 }
 
-img {
-  height: 100px;
+a {
+  text-decoration: none;
+  color: #000;
+  margin-right: 12px;
 }
+
+a.active {
+  text-decoration: underline;
+}
+
+.section-meals .container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 24px;
+}
+
+/* img {
+  height: 100px;
+} */
 
 .desc {
   text-align: center;
   color: #999;
 }
 
-.container {
+.meal {
   background-color: #f7f7f7;
   border: 3px solid #f19a0e;
   padding: 20px;
-  flex-wrap: wrap;
-  flex-grow: 1;
+  /* flex-wrap: wrap;
+  flex-grow: 1; */
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
 }
 
-.np-image img {
+.image img {
   width: 100%;
   height: auto;
 }
 
-.np-description {
-  margin-top: 10px;
+.actions {
+  text-align: center;
 }
 
-.np-actions {
-  margin-top: 20px;
-}
-
-.np-likes {
+/* .likes {
   display: flex;
   align-items: center;
   margin-bottom: 10px;
-}
+} */
 
-.np-likes i {
+.likes i {
   color: #f19a0e;
   margin-right: 5px;
 }
@@ -70,10 +88,10 @@ img {
   padding: 10px 20px;
   cursor: pointer;
   margin-right: 10px;
-  width: 90%;
+  width: 80%;
   margin-top: 1%;
-  font-size: 30px;
-  font-family: 'Pangolin', cursive;
+  font-size: 24px;
+  font-family: "Pangolin", cursive;
   box-shadow: -11px 12px 15px 2px rgba(0, 0, 0, 0.75);
   -webkit-box-shadow: -11px 12px 15px 2px rgba(0, 0, 0, 0.75);
   -moz-box-shadow: -11px 12px 15px 2px rgba(0, 0, 0, 0.75);
