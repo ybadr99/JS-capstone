@@ -1,18 +1,17 @@
-import "./style.css";
-import { getMeals } from "./modules/api";
+import './style.css';
+import { getMeals } from './modules/api';
 
 const displayMeals = async () => {
   const meals = await getMeals();
   meals.forEach((meal) => {
-    document.querySelector(".meals").innerHTML += createMeal(meal);
+    document.querySelector('.meals').innerHTML += createMeal(meal);
   });
   console.log(meals);
 };
 
 displayMeals();
 
-const createMeal = (meal) => {
-  return `
+const createMeal = (meal) => `
       <div class="meal">
       <div class="image">
         <img src="${meal.strMealThumb}" alt="meal image" />
@@ -28,7 +27,6 @@ const createMeal = (meal) => {
       </div>
     </div>
       `;
-};
 // <div class="description">
 //   <p></p>
 // </div>
