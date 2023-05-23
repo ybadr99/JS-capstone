@@ -12,7 +12,8 @@ body {
 .container {
   margin: 0 auto;
   max-width: 1400px;
-  padding: 0 32px;
+  /* padding: 0 32px; */
+  /* border: #000 solid 1px; */
 }
 
 h1 {
@@ -40,10 +41,6 @@ a.active {
   gap: 24px;
 }
 
-/* img {
-  height: 100px;
-} */
-
 .desc {
   text-align: center;
   color: #999;
@@ -53,8 +50,6 @@ a.active {
   background-color: #f7f7f7;
   border: 3px solid #f19a0e;
   padding: 20px;
-  /* flex-wrap: wrap;
-  flex-grow: 1; */
   display: flex;
   flex-direction: column;
   gap: 18px;
@@ -68,12 +63,6 @@ a.active {
 .actions {
   text-align: center;
 }
-
-/* .likes {
-  display: flex;
-  align-items: center;
-  margin-bottom: 10px;
-} */
 
 .likes i {
   color: #f19a0e;
@@ -92,9 +81,7 @@ a.active {
   margin-top: 1%;
   font-size: 24px;
   font-family: "Pangolin", cursive;
-  box-shadow: -11px 12px 15px 2px rgba(0, 0, 0, 0.75);
-  -webkit-box-shadow: -11px 12px 15px 2px rgba(0, 0, 0, 0.75);
-  -moz-box-shadow: -11px 12px 15px 2px rgba(0, 0, 0, 0.75);
+  box-shadow: 10px 10px 2px 1px rgba(0, 0, 0, 0.2);
 }
 
 .comments:hover,
@@ -103,13 +90,16 @@ a.active {
 }
 
 footer {
+  width: 100%;
+  padding-top: 20px;
+  bottom: 0;
+}
+
+footer .container {
   border: 3px solid #f19a0e;
   text-align: center;
-  width: 99%;
-  bottom: 0;
-  font-size: 25px;
-  padding-block: 15px;
   letter-spacing: 00.2em;
+  padding: 12px 0;
 }
 
 span {
