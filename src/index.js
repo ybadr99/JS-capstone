@@ -1,5 +1,5 @@
-import './style.css';
-import { getMeals, getLikesItems } from './modules/api.js';
+import "./style.css";
+import { getMeals, getLikesItems, like } from "./modules/api.js";
 
 const createMeal = (meal) => `
       <div class="meal">
@@ -11,7 +11,7 @@ const createMeal = (meal) => `
         <h3>${meal.strMeal}</h3>
       </div>
       <div class="likes">
-        <i class="fas fa-heart"></i>
+        <i class="fas fa-heart" id='${meal.idMeal}'></i>
         <span>${meal.likes ? meal.likes : 0} Likes</span>
       </div>
 
@@ -34,8 +34,22 @@ const displayMeals = async () => {
   });
 
   likedItems.forEach((meal) => {
-    document.querySelector('.meals').innerHTML += createMeal(meal);
+    document.querySelector(".meals").innerHTML += createMeal(meal);
   });
+
+  //like interactions
+  document.querySelectorAll(".fa-heart").forEach((item) => {
+    item.addEventListener("click", (e) => {
+      console.log(e.target.id);
+      likeInteract(e.target.id);
+    });
+  });
+};
+
+const likeInteract = async (id) => {
+  await like(id);
+  document.querySelector(".meals").innerHTML = "";
+  await displayMeals();
 };
 
 displayMeals();

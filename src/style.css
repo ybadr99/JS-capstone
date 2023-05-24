@@ -7,6 +7,7 @@
 body {
   font-family: "Pangolin", cursive;
   font-size: 24px;
+  position: relative;
 }
 
 .container {
@@ -82,6 +83,8 @@ span {
 .likes i {
   color: #f19a0e;
   margin-right: 5px;
+  cursor: pointer;
+  transition: 0.3s;
 }
 
 .comments,
