@@ -1,15 +1,5 @@
 import './style.css';
-import { getMeals } from './modules/api';
-
-const displayMeals = async () => {
-  const meals = await getMeals();
-  meals.forEach((meal) => {
-    document.querySelector('.meals').innerHTML += createMeal(meal);
-  });
-  console.log(meals);
-};
-
-displayMeals();
+import { getMeals, getLikesItems } from './modules/api.js';
 
 const createMeal = (meal) => `
       <div class="meal">
@@ -20,6 +10,11 @@ const createMeal = (meal) => `
       <div class="title">
         <h3>${meal.strMeal}</h3>
       </div>
+      <div class="likes">
+        <i class="fas fa-heart"></i>
+        <span>${meal.likes ? meal.likes : 0} Likes</span>
+      </div>
+
 
       <div class="actions">
         <button class="comments">Comments</button>
@@ -27,10 +22,20 @@ const createMeal = (meal) => `
       </div>
     </div>
       `;
-// <div class="description">
-//   <p></p>
-// </div>
-// <div class="likes">
-//   <i class="fas fa-heart"></i>
-//   <span>50 Likes</span>
-// </div>
+
+const displayMeals = async () => {
+  const meals = await getMeals();
+
+  const items = await getLikesItems();
+  const likedItems = [];
+  meals.forEach((meal) => {
+    const likedItem = items.find((item) => item.item_id === meal.idMeal);
+    likedItems.push({ ...meal, ...likedItem });
+  });
+
+  likedItems.forEach((meal) => {
+    document.querySelector('.meals').innerHTML += createMeal(meal);
+  });
+};
+
+displayMeals();
