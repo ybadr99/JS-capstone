@@ -1,5 +1,5 @@
-import "./style.css";
-import { getMeals, getLikesItems, like } from "./modules/api.js";
+import './style.css';
+import { getMeals, getLikesItems, like } from './modules/api.js';
 
 const createMeal = (meal) => `
       <div class="meal">
@@ -23,6 +23,13 @@ const createMeal = (meal) => `
     </div>
       `;
 
+const likeInteract = async (id) => {
+  await like(id);
+  document.querySelector('.meals').innerHTML = '';
+  // eslint-disable-next-line no-use-before-define
+  await displayMeals();
+};
+
 const displayMeals = async () => {
   const meals = await getMeals();
 
@@ -34,22 +41,15 @@ const displayMeals = async () => {
   });
 
   likedItems.forEach((meal) => {
-    document.querySelector(".meals").innerHTML += createMeal(meal);
+    document.querySelector('.meals').innerHTML += createMeal(meal);
   });
 
-  //like interactions
-  document.querySelectorAll(".fa-heart").forEach((item) => {
-    item.addEventListener("click", (e) => {
-      console.log(e.target.id);
+  // like interactions
+  document.querySelectorAll('.fa-heart').forEach((item) => {
+    item.addEventListener('click', (e) => {
       likeInteract(e.target.id);
     });
   });
-};
-
-const likeInteract = async (id) => {
-  await like(id);
-  document.querySelector(".meals").innerHTML = "";
-  await displayMeals();
 };
 
 displayMeals();
