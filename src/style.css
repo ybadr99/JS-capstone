@@ -7,7 +7,6 @@
 body {
   font-family: "Pangolin", cursive;
   font-size: 24px;
-  position: relative;
 }
 
 .container {
@@ -50,10 +49,9 @@ footer .container {
 span {
   color: #f19a0e;
 }
-
 .section-meals .container {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 24px;
 }
 
@@ -83,8 +81,6 @@ span {
 .likes i {
   color: #f19a0e;
   margin-right: 5px;
-  cursor: pointer;
-  transition: 0.3s;
 }
 
 .comments,
