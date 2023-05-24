@@ -1,22 +1,5 @@
-import "./style.css";
-import { getMeals, getLikesItems } from "./modules/api";
-
-const displayMeals = async () => {
-  const meals = await getMeals();
-
-  const items = await getLikesItems();
-  const likedItems = [];
-  meals.forEach((meal) => {
-    const likedItem = items.find((item) => item.item_id == meal.idMeal);
-    likedItems.push({ ...meal, ...likedItem });
-  });
-
-  likedItems.forEach((meal) => {
-    document.querySelector(".meals").innerHTML += createMeal(meal);
-  });
-};
-
-displayMeals();
+import './style.css';
+import { getMeals, getLikesItems } from './modules/api.js';
 
 const createMeal = (meal) => `
       <div class="meal">
@@ -39,3 +22,20 @@ const createMeal = (meal) => `
       </div>
     </div>
       `;
+
+const displayMeals = async () => {
+  const meals = await getMeals();
+
+  const items = await getLikesItems();
+  const likedItems = [];
+  meals.forEach((meal) => {
+    const likedItem = items.find((item) => item.item_id === meal.idMeal);
+    likedItems.push({ ...meal, ...likedItem });
+  });
+
+  likedItems.forEach((meal) => {
+    document.querySelector('.meals').innerHTML += createMeal(meal);
+  });
+};
+
+displayMeals();
