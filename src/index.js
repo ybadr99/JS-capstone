@@ -1,5 +1,5 @@
 import './style.css';
-import { getMeals, getLikesItems } from './modules/api.js';
+import { getMeals, getLikesItems, like } from './modules/api.js';
 
 const createMeal = (meal) => `
       <div class="meal">
@@ -11,7 +11,7 @@ const createMeal = (meal) => `
         <h3>${meal.strMeal}</h3>
       </div>
       <div class="likes">
-        <i class="fas fa-heart"></i>
+        <i class="fas fa-heart" id='${meal.idMeal}'></i>
         <span>${meal.likes ? meal.likes : 0} Likes</span>
       </div>
 
@@ -22,6 +22,13 @@ const createMeal = (meal) => `
       </div>
     </div>
       `;
+
+const likeInteract = async (id) => {
+  await like(id);
+  document.querySelector('.meals').innerHTML = '';
+  // eslint-disable-next-line no-use-before-define
+  await displayMeals();
+};
 
 const displayMeals = async () => {
   const meals = await getMeals();
@@ -35,6 +42,13 @@ const displayMeals = async () => {
 
   likedItems.forEach((meal) => {
     document.querySelector('.meals').innerHTML += createMeal(meal);
+  });
+
+  // like interactions
+  document.querySelectorAll('.fa-heart').forEach((item) => {
+    item.addEventListener('click', (e) => {
+      likeInteract(e.target.id);
+    });
   });
 };
 

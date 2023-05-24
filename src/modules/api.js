@@ -14,3 +14,16 @@ export const getLikesItems = async () => {
 
   return items;
 };
+
+export const like = async (id) => {
+  try {
+    const response = await fetch(`${InvolvementApi}apps/${apiId}/likes`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ item_id: id }),
+    });
+    return response;
+  } catch (error) {
+    throw new Error(error.message);
+  }
+};
