@@ -16,14 +16,41 @@ export const createMeal = (meal) => `
 
 
 <div class="actions">
-  <button class="comments open-button" id="${meal.idMeal}">Comments</button>
-  <button class="reservation">Reservations</button>
+  <button class="comment-btn open-button" id="${meal.idMeal}">Comments</button>
+  <button class="reservation-btn">Reservations</button>
 </div>
 </div>
 `;
 
-export const mealDetails = (meal) => `<img
-src="${meal.strMealThumb}"
-alt=""
-/>
-<h3>${meal.strMeal}</h3>`;
+const renderComments = (comments) => {
+  let commentsContainer = document.createElement("ul");
+  if (comments) {
+    comments.forEach((comment) => {
+      console.log(comment);
+      commentsContainer.innerHTML += `<li>${comment.creation_date}   ${comment.username} ${comment.comment}</li>`;
+    });
+  }
+
+  return commentsContainer;
+};
+
+export const mealDetails = (meal) => {
+  const comments = renderComments(meal.comments);
+
+  console.log(comments);
+
+  return `
+  
+  <img
+  src="${meal.strMealThumb}"
+  alt=""
+  />
+  <h3>${meal.strMeal}</h3>
+  
+  <div class='comments'>
+    <h4>comments(2)</h4>
+    ${comments ? comments.outerHTML : ""}
+  </div>
+
+  `;
+};
