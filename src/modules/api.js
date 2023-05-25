@@ -1,6 +1,6 @@
-const baseApi = 'https://www.themealdb.com/api/json/v1/1/filter.php?a=Egyptian';
-const apiId = 'peHlM9hq9qKvsrh6N3Wm';
-const InvolvementApi = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/';
+export const baseApi = 'https://www.themealdb.com/api/json/v1/1/filter.php?a=Egyptian';
+export const apiId = 'peHlM9hq9qKvsrh6N3Wm';
+export const InvolvementApi = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/';
 
 export const getLikesItems = async () => {
   try {
