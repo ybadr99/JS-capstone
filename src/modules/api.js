@@ -1,7 +1,6 @@
-const baseApi = "https://www.themealdb.com/api/json/v1/1/filter.php?a=Egyptian";
-const apiId = "peHlM9hq9qKvsrh6N3Wm";
-const InvolvementApi =
-  "https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/";
+const baseApi = 'https://www.themealdb.com/api/json/v1/1/filter.php?a=Egyptian';
+const apiId = 'peHlM9hq9qKvsrh6N3Wm';
+const InvolvementApi = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/';
 
 export const getLikesItems = async () => {
   try {
@@ -19,8 +18,8 @@ export const getMeals = async () => {
 
   const items = await getLikesItems();
 
-  meals.map((meal) => {
-    let item = items.find((item) => item.item_id === meal.idMeal);
+  meals.forEach((meal) => {
+    const item = items.find((item) => item.item_id === meal.idMeal);
     if (item) {
       meal.likes = item.likes;
     } else {
@@ -34,8 +33,8 @@ export const getMeals = async () => {
 export const addLike = async (id) => {
   try {
     const response = await fetch(`${InvolvementApi}apps/${apiId}/likes`, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ item_id: id }),
     });
     return response;

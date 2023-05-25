@@ -1,5 +1,4 @@
-export const createMeal = (meal) => {
-  return `
+const createMeal = (meal) => `
 <div class="meal">
 <div class="image">
   <img src="${meal.strMealThumb}" alt="meal image" />
@@ -22,4 +21,5 @@ export const createMeal = (meal) => {
 </div>
 </div>
 `;
-};
+
+export default createMeal;
