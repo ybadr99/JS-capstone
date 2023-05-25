@@ -1,6 +1,7 @@
-import "./style.css";
-import { getMeals, getLikesItems, like } from "./modules/api.js";
-const loaderEl = document.querySelector(".loading");
+import './style.css';
+import { getMeals, getLikesItems, like } from './modules/api.js';
+
+const loaderEl = document.querySelector('.loading');
 
 const createMeal = (meal) => `
       <div class="meal">
@@ -26,14 +27,14 @@ const createMeal = (meal) => `
 
 const likeInteract = async (id) => {
   await like(id);
-  document.querySelector(".meals").innerHTML = "";
+  document.querySelector('.meals').innerHTML = '';
 
   // eslint-disable-next-line no-use-before-define
   await displayMeals();
 };
 
 const displayMeals = async () => {
-  loaderEl.classList.add("active");
+  loaderEl.classList.add('active');
 
   const meals = await getMeals();
 
@@ -45,13 +46,13 @@ const displayMeals = async () => {
   });
 
   likedItems.forEach((meal) => {
-    document.querySelector(".meals").innerHTML += createMeal(meal);
-    loaderEl.classList.remove("active");
+    document.querySelector('.meals').innerHTML += createMeal(meal);
+    loaderEl.classList.remove('active');
   });
 
   // like interactions
-  document.querySelectorAll(".fa-heart").forEach((item) => {
-    item.addEventListener("click", (e) => {
+  document.querySelectorAll('.fa-heart').forEach((item) => {
+    item.addEventListener('click', (e) => {
       likeInteract(e.target.id);
     });
   });

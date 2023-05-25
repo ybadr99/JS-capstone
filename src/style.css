@@ -87,7 +87,8 @@ span {
 
 .likes i:hover {
   transform: scale(1.2);
-  }
+}
+
 .comments,
 .reservation {
   background-color: #fff;
@@ -100,7 +101,7 @@ span {
   margin-top: 1%;
   font-size: 24px;
   font-family: "Pangolin", cursive;
-  box-shadow: 10px 10px 2px 1px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
   transition: 0.3s;
 }
 
@@ -115,6 +116,6 @@ span {
   text-align: center;
 }
 
-.active {
+.loading.active {
   display: block;
 }
