@@ -82,8 +82,12 @@ span {
 .likes i {
   color: #f19a0e;
   margin-right: 5px;
+  cursor: pointer;
 }
 
+.likes i:hover {
+  transform: scale(1.2);
+  }
 .comments,
 .reservation {
   background-color: #fff;
@@ -104,4 +108,13 @@ span {
 .reservation:hover {
   background-color: #333;
   color: white;
+}
+
+.loading {
+  display: none;
+  text-align: center;
+}
+
+.active {
+  display: block;
 }
