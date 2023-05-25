@@ -1,9 +1,10 @@
-import './style.css';
-import { getMeals, addLike } from './modules/api.js';
-import createMeal from './modules/meal.js';
+import "./style.css";
+import { getMeals, addLike } from "./modules/api.js";
+import createMeal from "./modules/meal.js";
+import counter from "./modules/counter";
 
-const loader = document.querySelector('.loading');
-loader.classList.add('active');
+const loader = document.querySelector(".loading");
+loader.classList.add("active");
 
 const meals = await getMeals();
 
@@ -15,13 +16,15 @@ const likeInteract = (id) => {
 };
 
 meals.forEach((meal) => {
-  document.querySelector('.meals').innerHTML += createMeal(meal);
-  loader.classList.remove('active');
+  document.querySelector(".meals").innerHTML += createMeal(meal);
+  loader.classList.remove("active");
 });
 
 // like interactions
-document.querySelectorAll('.fa-heart').forEach((item) => {
-  item.addEventListener('click', (e) => {
+document.querySelectorAll(".fa-heart").forEach((item) => {
+  item.addEventListener("click", (e) => {
     likeInteract(e.target.id);
   });
 });
+
+counter(document.querySelector(".home-counter"), meals);
