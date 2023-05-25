@@ -1,11 +1,11 @@
-import './style.css';
-import { getMeals, addLike } from './modules/api.js';
-
+import "./style.css";
+import { getMeals, addLike } from "./modules/api.js";
+import createMeal from "./modules/meal.js";
+import counter from "./modules/counter.js";
 import { showCommentsPopup } from './modules/comments.js';
-import { createMeal } from './modules/meal.js';
 
-const loader = document.querySelector('.loading');
-loader.classList.add('active');
+const loader = document.querySelector(".loading");
+loader.classList.add("active");
 
 const likeInteract = async (id) => {
   await addLike(id);
@@ -18,30 +18,13 @@ const likeInteract = async (id) => {
   }
 };
 
-const displayMeals = async () => {
-  try {
-    const meals = await getMeals();
-    const mealsContainer = document.querySelector('.meals');
-
-    meals.forEach((meal) => {
-      const mealElement = createMeal(meal);
-      mealsContainer.appendChild(mealElement);
-    });
-
-    loader.classList.remove('active');
-  } catch (error) {
-    console.error('Error displaying meals:', error);
-  }
-};
-
-displayMeals();
-
 // like interactions
-document.querySelectorAll('.fa-heart').forEach((item) => {
-  item.addEventListener('click', (e) => {
+document.querySelectorAll(".fa-heart").forEach((item) => {
+  item.addEventListener("click", (e) => {
     likeInteract(e.target.id);
   });
 });
+
 
 document.addEventListener('click', (event) => {
   if (event.target.classList.contains('comments')) {
@@ -49,3 +32,6 @@ document.addEventListener('click', (event) => {
     showCommentsPopup(mealId);
   }
 });
+
+counter(document.querySelector(".counter"), meals);
+
