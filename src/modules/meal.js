@@ -1,4 +1,4 @@
-const createMeal = (meal) => `
+export const createMeal = (meal) => `
 <div class="meal">
 <div class="image">
   <img src="${meal.strMealThumb}" alt="meal image" />
@@ -16,10 +16,14 @@ const createMeal = (meal) => `
 
 
 <div class="actions">
-  <button class="comments">Comments</button>
+  <button class="comments open-button" id="${meal.idMeal}">Comments</button>
   <button class="reservation">Reservations</button>
 </div>
 </div>
 `;
 
-export default createMeal;
+export const mealDetails = (meal) => `<img
+src="${meal.strMealThumb}"
+alt=""
+/>
+<h3>${meal.strMeal}</h3>`;
