@@ -1,6 +1,8 @@
 import './style.css';
 import { getMeals, getLikesItems, like } from './modules/api.js';
 
+const loaderEl = document.querySelector('.loading');
+
 const createMeal = (meal) => `
       <div class="meal">
       <div class="image">
@@ -26,11 +28,14 @@ const createMeal = (meal) => `
 const likeInteract = async (id) => {
   await like(id);
   document.querySelector('.meals').innerHTML = '';
+
   // eslint-disable-next-line no-use-before-define
   await displayMeals();
 };
 
 const displayMeals = async () => {
+  loaderEl.classList.add('active');
+
   const meals = await getMeals();
 
   const items = await getLikesItems();
@@ -42,6 +47,7 @@ const displayMeals = async () => {
 
   likedItems.forEach((meal) => {
     document.querySelector('.meals').innerHTML += createMeal(meal);
+    loaderEl.classList.remove('active');
   });
 
   // like interactions
