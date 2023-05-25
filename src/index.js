@@ -1,61 +1,27 @@
 import './style.css';
-import { getMeals, getLikesItems, like } from './modules/api.js';
+import { getMeals, addLike } from './modules/api.js';
+import createMeal from './modules/meal.js';
 
-const loaderEl = document.querySelector('.loading');
+const loader = document.querySelector('.loading');
+loader.classList.add('active');
 
-const createMeal = (meal) => `
-      <div class="meal">
-      <div class="image">
-        <img src="${meal.strMealThumb}" alt="meal image" />
-      </div>
+const meals = await getMeals();
 
-      <div class="title">
-        <h3>${meal.strMeal}</h3>
-      </div>
-      <div class="likes">
-        <i class="fas fa-heart" id='${meal.idMeal}'></i>
-        <span>${meal.likes ? meal.likes : 0} Likes</span>
-      </div>
-
-
-      <div class="actions">
-        <button class="comments">Comments</button>
-        <button class="reservation">Reservations</button>
-      </div>
-    </div>
-      `;
-
-const likeInteract = async (id) => {
-  await like(id);
-  document.querySelector('.meals').innerHTML = '';
-
-  // eslint-disable-next-line no-use-before-define
-  await displayMeals();
+const likeInteract = (id) => {
+  addLike(id);
+  const likedMeal = meals.find((m) => m.idMeal === id);
+  // eslint-disable-next-line no-plusplus
+  document.querySelector(`.like-${id}`).textContent = ++likedMeal.likes;
 };
 
-const displayMeals = async () => {
-  loaderEl.classList.add('active');
+meals.forEach((meal) => {
+  document.querySelector('.meals').innerHTML += createMeal(meal);
+  loader.classList.remove('active');
+});
 
-  const meals = await getMeals();
-
-  const items = await getLikesItems();
-  const likedItems = [];
-  meals.forEach((meal) => {
-    const likedItem = items.find((item) => item.item_id === meal.idMeal);
-    likedItems.push({ ...meal, ...likedItem });
+// like interactions
+document.querySelectorAll('.fa-heart').forEach((item) => {
+  item.addEventListener('click', (e) => {
+    likeInteract(e.target.id);
   });
-
-  likedItems.forEach((meal) => {
-    document.querySelector('.meals').innerHTML += createMeal(meal);
-    loaderEl.classList.remove('active');
-  });
-
-  // like interactions
-  document.querySelectorAll('.fa-heart').forEach((item) => {
-    item.addEventListener('click', (e) => {
-      likeInteract(e.target.id);
-    });
-  });
-};
-
-displayMeals();
+});
