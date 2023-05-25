@@ -1,6 +1,9 @@
 import './style.css';
 import { getMeals, addLike } from './modules/api.js';
 import { createMeal, mealDetails } from './modules/meal.js';
+import getComments from './modules/getComments.js';
+
+// Rest of your code...
 
 const loader = document.querySelector('.loading');
 loader.classList.add('active');
@@ -32,7 +35,7 @@ const openModal = document.querySelectorAll('.open-button');
 const closeModal = document.querySelector('.close-button');
 
 openModal.forEach((item) => {
-  item.addEventListener('click', () => {
+  item.addEventListener('click', async () => {
     modal.innerHTML = ''; // Clear previous content of the modal
     // Display the popup
     modal.showModal();
@@ -72,6 +75,41 @@ openModal.forEach((item) => {
       </form>
     `;
     modalContent.appendChild(formContainer);
+
+    // Retrieve and display comments
+    const commentsCount = modalContent.querySelector('.comments-count');
+    const commentForm = formContainer.querySelector('form');
+    const saveCommentButton = formContainer.querySelector('#btn-save-comment');
+
+    // Function to fetch comments from the Involvement API and update the UI
+    const fetchComments = async () => {
+      try {
+        const comments = await getComments(item.id);
+        // Update comments count
+        commentsCount.textContent = comments.length;
+
+        // Update comments in the UI
+        const commentsContainer = document.createElement('div');
+        commentsContainer.classList.add('comments-container');
+        comments.forEach((comment) => {
+          const commentElement = document.createElement('div');
+          commentElement.classList.add('comment');
+          commentElement.innerHTML = `
+            <h4>${comment.name}</h4>
+            <p>${comment.comment}</p>
+          `;
+          commentsContainer.appendChild(commentElement);
+        });
+
+        // Append comments to the form container
+        formContainer.appendChild(commentsContainer);
+      } catch (error) {
+        console.error('Error fetching comments:', error);
+      }
+    };
+
+    // Call the fetchComments function to retrieve and display comments
+    await fetchComments();
 
     // Close modal when close button is clicked
     closeButton.addEventListener('click', () => {
