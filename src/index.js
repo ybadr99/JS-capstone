@@ -1,9 +1,8 @@
 import './style.css';
 import { getMeals, addLike } from './modules/api.js';
 import { createMeal, mealDetails } from './modules/meal.js';
+import counter from './modules/counter.js';
 import getComments from './modules/getComments.js';
-
-// Rest of your code...
 
 const loader = document.querySelector('.loading');
 loader.classList.add('active');
@@ -29,6 +28,7 @@ document.querySelectorAll('.fa-heart').forEach((item) => {
   });
 });
 
+counter(document.querySelector('.home-counter'), meals);
 // modal
 const modal = document.querySelector('#modal');
 const openModal = document.querySelectorAll('.open-button');
