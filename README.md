@@ -74,9 +74,9 @@ To run the project, execute the following command:
 To run tests, run the following commands:
 
 ```sh
-  npx stylelint "**/*.{css,scss}"
-  npx hint .
-  npx eslint .
+  npm install --save-dev jest
+  npx jest
+
 ```
 ## 🔭 Future Features <a name="future-features"></a>
 
