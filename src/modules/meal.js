@@ -23,15 +23,17 @@ export const createMeal = (meal) => `
 `;
 
 const renderComments = (comments) => {
-  let commentsContainer = document.createElement("ul");
+  const commentsContainer = document.createElement('ul');
+
   if (comments) {
     comments.forEach((comment) => {
       console.log(comment);
-      commentsContainer.innerHTML += `<li>${comment.creation_date}   ${comment.username} ${comment.comment}</li>`;
+      commentsContainer.innerHTML += `<li>${comment.creation_date} ${comment.username} ${comment.comment}</li>`;
     });
   }
 
-  return commentsContainer;
+  const commentCount = comments ? comments.length : 0;
+  return { commentsContainer, commentCount };
 };
 
 export const mealDetails = (meal) => {
@@ -40,17 +42,11 @@ export const mealDetails = (meal) => {
   console.log(comments);
 
   return `
-  
-  <img
-  src="${meal.strMealThumb}"
-  alt=""
-  />
-  <h3>${meal.strMeal}</h3>
-  
-  <div class='comments'>
-    <h4>comments(2)</h4>
-    ${comments ? comments.outerHTML : ""}
-  </div>
-
+    <img src="${meal.strMealThumb}" alt="" />
+    <h3>${meal.strMeal}</h3>
+    <div class='comments'>
+      <h4>comments(${comments.commentCount})</h4>
+      ${comments ? comments.commentsContainer.outerHTML : ''}
+    </div>
   `;
 };
