@@ -36,86 +36,22 @@ const closeModal = document.querySelector('.close-button');
 
 openModal.forEach((item) => {
   item.addEventListener('click', async () => {
-    modal.innerHTML = ''; // Clear previous content of the modal
-    // Display the popup
+    // display the popup
     modal.showModal();
-
-    // Create close button
-    const closeButton = document.createElement('button');
-    closeButton.classList.add('close-button');
-    closeButton.innerHTML = '&times;';
-    modal.appendChild(closeButton);
-
-    // Find the selected meal
+    // find the selected meal
     const meal = meals.find((m) => m.idMeal === item.id);
-    const modalContent = document.createElement('div');
-    modalContent.classList.add('modal-content');
-    modalContent.innerHTML = mealDetails(meal);
-    modal.appendChild(modalContent);
 
-    // Append the form to the modal content
-    const formContainer = document.createElement('div');
-    formContainer.classList.add('comment-form');
-    formContainer.innerHTML = `
-      <h2>Comments (<span class="comments-count"></span>)</h2>
-      <form>
-        <div class="form-group">
-          <h2>Add a Comment</h2>
-          <label for="txt-visitor">Name:</label>
-          <input id="txt-visitor" type="text" placeholder="Your name" />
-        </div>
-        <div class="form-group">
-          <label for="txt-comment">Comment:</label>
-          <input id="txt-comment" type="text" placeholder="Your comment" />
-        </div>
-        <input id="launch-id" type="hidden" />
-        <div class="form-group">
-          <input class="comment" id="btn-save-comment" type="button" value="Comment" />
-        </div>
-      </form>
-    `;
-    modalContent.appendChild(formContainer);
+    // get comments
+    const comments = await getComments(meal.idMeal);
+    meal.comments = comments;
+    // console.log("meal c", meal.comments);
 
-    // Retrieve and display comments
-    const commentsCount = modalContent.querySelector('.comments-count');
-    const commentForm = formContainer.querySelector('form');
-    const saveCommentButton = formContainer.querySelector('#btn-save-comment');
-
-    // Function to fetch comments from the Involvement API and update the UI
-    const fetchComments = async () => {
-      try {
-        const comments = await getComments(item.id);
-        // Update comments count
-        commentsCount.textContent = comments.length;
-
-        // Update comments in the UI
-        const commentsContainer = document.createElement('div');
-        commentsContainer.classList.add('comments-container');
-        comments.forEach((comment) => {
-          const commentElement = document.createElement('div');
-          commentElement.classList.add('comment');
-          commentElement.innerHTML = `
-            <h4>${comment.name}</h4>
-            <p>${comment.comment}</p>
-          `;
-          commentsContainer.appendChild(commentElement);
-        });
-
-        // Append comments to the form container
-        formContainer.appendChild(commentsContainer);
-      } catch (error) {
-        console.error('Error fetching comments:', error);
-      }
-    };
-
-    // Call the fetchComments function to retrieve and display comments
-    await fetchComments();
-
-    // Close modal when close button is clicked
-    closeButton.addEventListener('click', () => {
-      modal.close();
-    });
+    document.querySelector('.modal-content').innerHTML = mealDetails(meal);
   });
+});
+
+closeModal.addEventListener('click', () => {
+  modal.close();
 });
 
 window.addEventListener('click', (event) => {
