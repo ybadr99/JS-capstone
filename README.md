@@ -14,6 +14,7 @@
     - [Setup](#setup)
     - [Usage](#usage)
     - [Run tests](#run-tests)
+    - [🔭 Future Features](#future-features)
   - [👥 Authors ](#-authors-)
   - [🤝 Contributing ](#-contributing-)
   - [⭐️ Show your support ](#️-show-your-support-)
@@ -77,6 +78,10 @@ To run tests, run the following commands:
   npx hint .
   npx eslint .
 ```
+## 🔭 Future Features <a name="future-features"></a>
+
+- [ ] **[Animation and Transition]**
+- [ ] **[Database]**
 
 <!-- AUTHORS -->
 
