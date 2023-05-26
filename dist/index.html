@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Meals App</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pangolin&display=swap"
+      rel="stylesheet"
+    />
+  <script defer src="runtime.bundle.js"></script><script defer src="index.bundle.js"></script></head>
+  <body>
+    <header>
+      <div class="container">
+        <h1>Meals App</h1>
+        <a href="#" class="active">Meals(<span class="home-counter"></span>)</a>
+        <a href="#">About</a>
+      </div>
+    </header>
+    <main>
+      <section class="section-meals">
+        <h3 class="loading">loading...</h3>
+        <div class="meals container"></div>
+      </section>
+    </main>
+    <footer>
+      <div class="container">Created by Gakii and Yousef under MIT license</div>
+    </footer>
+    <dialog class="modal" id="modal">
+      <span class="close-button">&times;</span>
+      <div class="modal-content"></div>
+    </dialog>
+  </body>
+</html>
