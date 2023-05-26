@@ -17,31 +17,31 @@ const likeInteract = (id) => {
 };
 
 meals.forEach((meal) => {
-  document.querySelector('.meals').innerHTML += createMeal(meal);
-  loader.classList.remove('active');
+  document.querySelector(".meals").innerHTML += createMeal(meal);
+  loader.classList.remove("active");
 });
 
 // like interactions
-document.querySelectorAll('.fa-heart').forEach((item) => {
-  item.addEventListener('click', (e) => {
+document.querySelectorAll(".fa-heart").forEach((item) => {
+  item.addEventListener("click", (e) => {
     likeInteract(e.target.id);
   });
 });
 
 counter(document.querySelector('.home-counter'), meals);
 // modal
-const modal = document.querySelector('#modal');
-const openModal = document.querySelectorAll('.open-button');
-const closeModal = document.querySelector('.close-button');
+const modal = document.querySelector("#modal");
+const openModal = document.querySelectorAll(".open-button");
+const closeModal = document.querySelector(".close-button");
 
 openModal.forEach((item) => {
-  item.addEventListener('click', async () => {
-    // display the popup
+  item.addEventListener("click", async () => {
+    //display the popup
     modal.showModal();
-    // find the selected meal
+    //find the selected meal
     const meal = meals.find((m) => m.idMeal === item.id);
 
-    // get comments
+    //get comments
     const comments = await getComments(meal.idMeal);
     meal.comments = comments;
     // console.log("meal c", meal.comments);

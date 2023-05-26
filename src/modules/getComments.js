@@ -1,20 +1,21 @@
-const InvolvementApi = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/';
+// const InvolvementApi = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/';
 
 const getComments = async (itemId) => {
-  const url = `${InvolvementApi}/comments?item_id=${itemId}`;
+  const url = `https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/peHlM9hq9qKvsrh6N3Wm/comments?item_id=${itemId}`;
 
   try {
     const response = await fetch(url);
 
     if (!response.ok) {
-      throw new Error('Failed to retrieve comments');
+      throw new Error("Failed to retrieve comments");
     }
 
     const data = await response.json();
+
     return data;
   } catch (error) {
     // Handle the error gracefully
-    console.error('Error fetching comments:', error);
+    console.error("Error fetching comments:", error);
     return [];
   }
 };

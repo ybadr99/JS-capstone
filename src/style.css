@@ -89,8 +89,8 @@ span {
   transform: scale(1.2);
 }
 
-.comments,
-.reservation {
+.comment-btn,
+.reservation-btn {
   background-color: #fff;
   color: #333;
   border: 2px solid black;
@@ -105,7 +105,7 @@ span {
   transition: 0.3s;
 }
 
-.comments:hover,
+.comment-btn:hover,
 .reservation:hover {
   background-color: #333;
   color: white;
@@ -127,6 +127,10 @@ span {
   text-align: center;
   position: fixed;
   border-radius: 18px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .modal::backdrop {
@@ -140,26 +144,15 @@ span {
 }
 
 .close-button {
-  font-size: 44px;
-  color: #999;
-  background: transparent;
-  border: none;
+  display: block;
+  font-size: 32px;
   cursor: pointer;
   float: right;
+  color: #000;
+  margin: 10px 20px 0 0;
 }
 
-.comment {
-  padding: 8px 16px;
-  background-color: #4caf50;
-  color: #fff;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  width: 50%;
-  margin-bottom: 5%;
+.modal .comments {
+  margin: 20px 0;
 }
 
-.form-group {
-  font-size: 16px;
-  margin: 2%;
-}
