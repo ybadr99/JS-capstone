@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "build": "webpack",
-    "start": "webpack serve --watch"
+    "start": "webpack serve --watch",
+    "test": "jest"
   },
   "keywords": [],
   "author": "",
