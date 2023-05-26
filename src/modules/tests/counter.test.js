@@ -1,5 +1,5 @@
-import counter from '../counter.js';
 import { JSDOM } from 'jsdom';
+import counter from '../counter.js';
 
 describe('counter function', () => {
   let element;
