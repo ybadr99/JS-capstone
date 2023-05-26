@@ -7,7 +7,7 @@ const getComments = async (itemId) => {
     const response = await fetch(url);
 
     if (!response.ok) {
-      throw new Error("Failed to retrieve comments");
+      throw new Error('Failed to retrieve comments');
     }
 
     const data = await response.json();
@@ -15,7 +15,7 @@ const getComments = async (itemId) => {
     return data;
   } catch (error) {
     // Handle the error gracefully
-    console.error("Error fetching comments:", error);
+    console.error('Error fetching comments:', error);
     return [];
   }
 };

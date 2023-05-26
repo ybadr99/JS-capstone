@@ -13,6 +13,7 @@
   "rules": {
     "no-shadow": "off",
     "no-unused-vars": "off",
+    "camelcase": "off",
     "no-param-reassign": "off",
     "no-console": "off",
     "eol-last": "off",
