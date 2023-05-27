@@ -123,9 +123,7 @@ span {
 .modal {
   width: 600px;
   height: 800px;
-  transform: translate(50%, 10%);
   text-align: center;
-  position: fixed;
   border-radius: 18px;
   position: absolute;
   left: 50%;

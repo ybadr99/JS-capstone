@@ -23,7 +23,7 @@ export const createMeal = (meal) => `
 `;
 
 export const renderComments = (comments) => {
-  const commentsContainer = document.createElement("ul");
+  const commentsContainer = document.createElement('ul');
   if (comments) {
     comments.forEach(({ username, creation_date, comment }) => {
       commentsContainer.innerHTML += `<li>${creation_date}   ${username} ${comment}</li>`;
@@ -45,7 +45,7 @@ export const mealDetails = (meal) => {
   
   <h4>comments(<span class='comments-counter'></span>)</h4>
   <div class='comments'>
-    ${comments ? comments.outerHTML : ""}
+    ${comments ? comments.outerHTML : ''}
   </div>
 
   <h5>Add a comment</h5>
