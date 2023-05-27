@@ -123,9 +123,11 @@ span {
 .modal {
   width: 600px;
   height: 800px;
+  transform: translate(50%, 10%);
   text-align: center;
   position: fixed;
   border-radius: 18px;
+  position: absolute;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
@@ -152,4 +154,31 @@ span {
 
 .modal .comments {
   margin: 20px 0;
+}
+
+form {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+}
+
+form input {
+  padding: 10px;
+  width: 50%;
+}
+
+.submit-btn {
+  padding: 8px 16px;
+  background-color: #333;
+  color: #fff;
+  border: none;
+  font-size: 18px;
+  text-align: left;
+  cursor: pointer;
+}
+
+.submit-btn:hover {
+  transform: scale(1.1);
 }
