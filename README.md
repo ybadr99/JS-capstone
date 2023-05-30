@@ -5,23 +5,24 @@
 # 📗 Table of Contents
 
 - [📗 Table of Contents](#-table-of-contents)
-- [📖 Leaderbord](#-leaderbord)
+- [📖 Meals app](#-meals-app)
   - [🛠 Built With ](#-built-with-)
     - [Tech Stack ](#tech-stack-)
     - [Key Features ](#key-features-)
+  - [🚀 Live demo https://ybadr99.github.io/JS-capstone/dist/](#-live-demo-httpsybadr99githubiojs-capstonedist)
   - [💻 Getting Started ](#-getting-started-)
     - [Prerequisites](#prerequisites)
     - [Setup](#setup)
     - [Usage](#usage)
     - [Run tests](#run-tests)
-    - [🔭 Future Features](#future-features)
+  - [🔭 Future Features ](#-future-features-)
   - [👥 Authors ](#-authors-)
   - [🤝 Contributing ](#-contributing-)
   - [⭐️ Show your support ](#️-show-your-support-)
   - [🙏 Acknowledgments ](#-acknowledgments-)
   - [📝 License ](#-license-)
 
-# 📖 Leaderbord<a name="about-project"></a>
+# 📖 Meals app<a name="about-project"></a>
 
 A medium fidelity website that uses the Meals API to display players scores
 
@@ -38,6 +39,8 @@ A medium fidelity website that uses the Meals API to display players scores
 - [ ] **Fetch and display meals**
 - [ ] **Like**
 - [ ] **Comment on meal**
+
+## 🚀 Live demo <a name="live-demo">https://ybadr99.github.io/JS-capstone/dist/</a>
 
 ## 💻 Getting Started <a name="getting-started"></a>
 
@@ -78,6 +81,7 @@ To run tests, run the following commands:
   npx jest
 
 ```
+
 ## 🔭 Future Features <a name="future-features"></a>
 
 - [ ] **[Animation and Transition]**
