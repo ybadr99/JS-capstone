@@ -6,9 +6,9 @@
 
 - [📗 Table of Contents](#-table-of-contents)
 - [📖 Leaderbord](#-leaderbord)
-  - [🛠 Built With ](#-built-with-)
     - [Tech Stack ](#tech-stack-)
     - [Key Features ](#key-features-)
+    - [Live Demo](#live-demo)
   - [💻 Getting Started ](#-getting-started-)
     - [Prerequisites](#prerequisites)
     - [Setup](#setup)
@@ -25,7 +25,6 @@
 
 A medium fidelity website that uses the Meals API to display players scores
 
-## 🛠 Built With <a name="built-with"></a>
 
 ### Tech Stack <a name="tech-stack"></a>
 
@@ -38,6 +37,8 @@ A medium fidelity website that uses the Meals API to display players scores
 - [ ] **Fetch and display meals**
 - [ ] **Like**
 - [ ] **Comment on meal**
+
+### 🚀 Live Demo <a name="live-demo">https://meals-app-pied.vercel.app/</a>
 
 ## 💻 Getting Started <a name="getting-started"></a>
 
